@@ -56,6 +56,7 @@ The mean squared distance between each instance and its closest centroid.
 #### Step 3: Anomaly Detection
 - Using a Gaussian mixture model for anomaly detection is quite simple: any instance located in a low-density region can be considered an anomaly.
 - Identify the outliers using the fourth percentile lowest density as the threshold (i.e., approximately 0.5% of the instances will be flagged as anomalies)
+
 ![download (4)](https://user-images.githubusercontent.com/44503223/126397886-88c48bd5-93f2-4fbb-b871-1335a8c76084.png)
 
 #### Step 4: Run iterations to select the most optimal cluster
