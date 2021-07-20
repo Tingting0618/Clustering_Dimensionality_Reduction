@@ -1,6 +1,7 @@
 # Dimensionality Reduction and Clustering
 
 ## Topic 1: PCA
+
 Principal Component Analysis (PCA) is by far the most popular dimensionality reduction algorithm. 
 First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it.
 Scikit-Learn’s PCA classes take care of centering the data.
@@ -25,6 +26,8 @@ This process called Singular Value Decomposition
 - Scree plot: % of variations that each PC accounts for. 
 
 ## Topic 2: K-Means
+
+The K-Means algorithm is a simple algorithm capable of clustering this kind of dataset very quickly and efficiently, often in just a few iterations.
 - Euclidean distance
 - Need to scale and center variable first (assuming all variables are equally important)
 
