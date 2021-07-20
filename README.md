@@ -1,6 +1,6 @@
-# Clustering Dimensionality Reduction
+# Dimensionality Reduction and Clustering
 
-### PCA
+### Topic 1: PCA
 Principal Component Analysis (PCA) is by far the most popular dimensionality reduction algorithm. 
 First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it.
 Scikit-Learn’s PCA classes take care of centering the data.
@@ -24,6 +24,22 @@ This process called Singular Value Decomposition
 - Total variation around PCs = PC1+PC2
 - Scree plot: % of variations that each PC accounts for. 
 
+### Topic 2: K-Means
+- Euclidean distance
+- Need to scale and center variable first (assuming all variables are equally important)
+
+#### K-Means Concept:
+- determine K (number of clusters)
+- randomly select K points
+- measure the distance between the first point and the first cluster
+- assign the first point based on its nearest cluster
+- calculate total variance within the clusters
+- go back to step b, re-randomly assign 3 clusters.
+- repeat, until the optimal clusters no longer change.
+
+#### K-Means Model evaluation metric
+The mean squared distance between each instance and its closest centroid.
+
 This repo is my learning notebook following:
 - Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, by Aurélien Géron (O’Reilly). Copyright 2019 Kiwisoft S.A.S., 978-1-492-03264-9.
-- StatQuest: PCA in Python https://statquest.org/statquest-pca-in-python/
+- StatQuest: https://statquest.org/
