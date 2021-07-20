@@ -40,7 +40,7 @@ The K-Means algorithm is a simple algorithm capable of clustering this kind of d
 - go back to step b, re-randomly assign 3 clusters.
 - repeat, until the optimal clusters no longer change.
 
-#### K-Means Model evaluation metric
+#### K-Means model evaluation metric
 The mean squared distance between each instance and its closest centroid.
 
 ## References:
