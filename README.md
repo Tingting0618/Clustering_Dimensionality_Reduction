@@ -62,6 +62,9 @@ The mean squared distance between each instance and its closest centroid.
 #### Step 4: Run iterations to select the most optimal cluster
 ![download (3)](https://user-images.githubusercontent.com/44503223/126397646-44652944-9757-4fc8-bb09-db370b043369.png)
 
+## Learn More
+
+For more information, please check out the [Project Portfolio](https://tingting0618.github.io) page.
 
 ## References:
 This repo is my learning notebook following:
