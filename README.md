@@ -63,7 +63,12 @@ The K-Means algorithm is a simple algorithm capable of clustering this kind of d
 - repeat, until the optimal clusters no longer change.
 
 #### K-Means model evaluation metric
-The mean squared distance between each instance and its closest centroid.
+Inertia = The mean squared distance between each instance and its closest centroid.
+
+#### K-Means model limitations
+- It is necessary to run the algorithm several times to avoid suboptimal solutions
+- Need to specify the number of clusters
+- Not behave very well when the clusters have varying sizes, different densities, or nonspherical shapes.
 
 ## Topic 4: Anomaly Detection Using Gaussian Mixtures
 - Anomaly detection (also called outlier detection) is the task of detecting instances that deviate strongly from the norm.
