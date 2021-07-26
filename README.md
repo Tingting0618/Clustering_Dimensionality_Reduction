@@ -13,6 +13,10 @@ Principal Component Analysis (PCA) is by far the most popular dimensionality red
 First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it.
 Scikit-Learn’s PCA classes take care of centering the data.
 
+Incremental PCA allows us to split the training set into mini-batches and feed an IPCA algorithm one mini-batch at a time. This is useful for large training sets and for applying PCA online (i.e., on the fly, as new instances arrive).
+
+Kernel PCA is good at preserving clusters of instances after projection, or sometimes even unrolling datasets that lie close to a twisted manifold.
+
 #### PCA uses singular value decomposition:
 - step 0: plot the data
 - step 1: get the center of the data
