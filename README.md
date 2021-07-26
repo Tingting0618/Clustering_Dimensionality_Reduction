@@ -2,6 +2,10 @@
 
 ## Topic 1: PCA
 
+Many Machine Learning problems involve thousands or even millions of features for each training instance. Not only do all these features make training extremely slow, but they can also make it much harder to find a good solution. This problem is often referred to as the curse of dimensionality.
+
+High-dimensional datasets are at risk of being very sparse. The more dimensions the training set has, the greater the risk of overfitting it.
+
 Principal Component Analysis (PCA) is by far the most popular dimensionality reduction algorithm. 
 First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it.
 Scikit-Learn’s PCA classes take care of centering the data.
