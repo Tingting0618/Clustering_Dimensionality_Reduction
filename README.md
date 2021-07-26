@@ -36,7 +36,17 @@ This process called Singular Value Decomposition
 - Total variation around PCs = PC1+PC2
 - Scree plot: % of variations that each PC accounts for. 
 
-## Topic 2: K-Means
+## Topic 2: Other Dimensionality Reduction Techniques
+- Multidimensional Scaling (MDS)
+  - Reduces dimensionality while trying to preserve the distances between the instances.
+
+ - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+  - Reduces dimensionality while trying to keep similar instances close and dissimilar instances apart. It is mostly used for visualization, in particular to visualize clusters of instances in high-dimensional space.
+
+- Linear Discriminant Analysis (LDA)
+  - LDA projection will keep classes as far apart as possible, so LDA is a good technique to reduce dimensionality before running another classification algorithm.
+
+## Topic 3: K-Means
 
 The K-Means algorithm is a simple algorithm capable of clustering this kind of dataset very quickly and efficiently, often in just a few iterations.
 - Euclidean distance
@@ -54,7 +64,7 @@ The K-Means algorithm is a simple algorithm capable of clustering this kind of d
 #### K-Means model evaluation metric
 The mean squared distance between each instance and its closest centroid.
 
-## Topic 3: Anomaly Detection Using Gaussian Mixtures
+## Topic 4: Anomaly Detection Using Gaussian Mixtures
 - Anomaly detection (also called outlier detection) is the task of detecting instances that deviate strongly from the norm.
 - Using a Gaussian mixture model for anomaly detection is quite simple: any instance located in a low-density region can be considered an anomaly.
 
