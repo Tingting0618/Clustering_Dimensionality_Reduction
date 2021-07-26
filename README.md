@@ -40,7 +40,7 @@ This process called Singular Value Decomposition
 - Multidimensional Scaling (MDS)
   - Reduces dimensionality while trying to preserve the distances between the instances.
 
- - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+- t-Distributed Stochastic Neighbor Embedding (t-SNE)
   - Reduces dimensionality while trying to keep similar instances close and dissimilar instances apart. It is mostly used for visualization, in particular to visualize clusters of instances in high-dimensional space.
 
 - Linear Discriminant Analysis (LDA)
