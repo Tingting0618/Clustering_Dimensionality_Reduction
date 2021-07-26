@@ -16,6 +16,7 @@ Scikit-Learn’s PCA classes take care of centering the data.
 **Incremental PCA** allows us to split the training set into mini-batches and feed an IPCA algorithm one mini-batch at a time. This is useful for large training sets and for applying PCA online (i.e., on the fly, as new instances arrive).
 
 **Kernel PCA** is good at preserving clusters of instances after projection, or sometimes even unrolling datasets that lie close to a twisted manifold.
+- e.g., linear, RBF, sigmoid kernels. 
 
 #### PCA uses singular value decomposition:
 - step 0: plot the data
