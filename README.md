@@ -4,7 +4,9 @@
 
 Many Machine Learning problems involve thousands or even millions of features for each training instance. Not only do all these features make training extremely slow, but they can also make it much harder to find a good solution. This problem is often referred to as the curse of dimensionality.
 
-High-dimensional datasets are at risk of being very sparse. The more dimensions the training set has, the greater the risk of overfitting it.
+High-dimensional datasets are at risk of being very sparse. The more dimensions the training set has, the greater the risk of overfitting it. There are two main approaches to reducing dimensionality: 
+  - Projection: Projection is helpful when instances lie close to a lower-dimensional (2D) subspace.
+  - Manifold Learning: Manifold Learning is helpful when the subspace may twist and turn, such as in the famous Swiss roll toy dataset.
 
 Principal Component Analysis (PCA) is by far the most popular dimensionality reduction algorithm. 
 First it identifies the hyperplane that lies closest to the data, and then it projects the data onto it.
