@@ -104,6 +104,7 @@ Inertia = The mean squared distance between each instance and its closest centro
 - Euclidean: sqrt(diff_sample1^2+diff_sample2^2+diff_sample3^2)
 - Manhattan: abs(sample1_diff)+abs(sample2_diff)+abs(sample3_diff)
 
+**Steps:**
 - Compare 1 new observation to the existing cluster (multiple variables) 
 - Compare that 1 vs the average of the cluster - centroid 
 - Compare that 1 vs the closest variable in that cluster - single-linkage
