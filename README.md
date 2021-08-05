@@ -91,6 +91,82 @@ Inertia = The mean squared distance between each instance and its closest centro
 #### Step 4: Run iterations to select the most optimal cluster
 ![download (3)](https://user-images.githubusercontent.com/44503223/126397646-44652944-9757-4fc8-bb09-db370b043369.png)
 
+## Topic 5: Hierarchical Clustering
+
+**Logic:**
+- Step1: figure out which variable is most close to var1
+- Step2: figure out which variable is most close to var2
+- Step3: of all those above combinations, figure out the closest group, cluster it
+- Step4: go back to step1, but treat the cluster in Step3 as 1 new variable
+
+**Definition of close:**
+
+- Euclidean: sqrt(diff_sample1^2+diff_sample2^2+diff_sample3^2)
+- Manhattan: abs(sample1_diff)+abs(sample2_diff)+abs(sample3_diff)
+
+- Compare 1 new observation to the existing cluster (multiple variables) 
+- Compare that 1 vs the average of the cluster - centroid 
+- Compare that 1 vs the closest variable in that cluster - single-linkage
+- Compare that 1 vs the furthest variable in that cluster - complete-linkage
+
+```r
+## NOTE: You can only have a few hundred rows and columns in a heatmap
+## Any more and the program will need to much memory to run. Also, it’s
+## hard to distinguish things when there are so many rows/columns.
+
+## Usually I pick the top 100 genes of interest and focus the heatmap on those
+## There are, of course, a million ways to pick 100 "genes of interest".
+## You might know what they are by doing differential gene expression
+## you might just pick the top 100 with the most variation across the
+## samples. Anything goes as long as it helps you gain insight into the data.
+
+## first let's "make up some data"...
+
+sample1 <- c(rnorm(n=5, mean=10), rnorm(n=5, mean=0), rnorm(n=5, mean=20))
+sample2 <- c(rnorm(n=5, mean=0), rnorm(n=5, mean=10), rnorm(n=5, mean=10))
+sample3 <- c(rnorm(n=5, mean=10), rnorm(n=5, mean=0), rnorm(n=5, mean=20))
+sample4 <- c(rnorm(n=5, mean=0), rnorm(n=5, mean=10), rnorm(n=5, mean=10))
+sample5 <- c(rnorm(n=5, mean=10), rnorm(n=5, mean=0), rnorm(n=5, mean=20))
+sample6 <- c(rnorm(n=5, mean=0), rnorm(n=5, mean=10), rnorm(n=5, mean=10))
+
+data <- data.frame(sample1, sample2, sample3, sample4, sample5, sample6)
+head(data)
+
+## draw heatmap without clustering
+heatmap(as.matrix(data), Rowv=NA, Colv=NA)
+
+## draw heatmap with clustering and use default settings for everything
+##
+## The heatmap function defaults to using…
+## The Euclidean distance to compare rows or columns.
+## "Complete-linkage" to compare clusters.
+##
+## Also, heatmap defaults to scaling the rows so that each row has mean=0
+## and standard deviation of 1. This is done to keep the range of colors
+## needed to show differences to a reasonable amount. There are only so
+## many shades of a color we can easily differentiate…
+heatmap(as.matrix(data))
+
+## draw heatmap with clustering and custom settings…
+## We’ll use the ‘manhattan’ distance to compare rows/columns
+## And "centroid" to compare clusters.
+## The differences are… subtle…
+heatmap(as.matrix(data),
+distfun=function(x) dist(x, method="manhattan"),
+hclustfun=function(x) hclust(x, method="centroid"))
+
+## Now do the same thing, but this time, scale columns instead of rows…
+heatmap(as.matrix(data),
+distfun=function(x) dist(x, method="manhattan"),
+hclustfun=function(x) hclust(x, method="centroid"),
+scale="column")
+
+## if you want to save a heatmap to a PDF file….
+pdf(file="my_first_heatmap.pdf", width=5, height=6)
+heatmap(as.matrix(data))
+dev.off()
+```
+
 ## Learn More
 
 For more information, please check out the [Project Portfolio](https://tingting0618.github.io) page.
@@ -98,4 +174,5 @@ For more information, please check out the [Project Portfolio](https://tingting0
 ## References:
 This repo is my learning journal following:
 - Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition, by Aurélien Géron (O’Reilly). Copyright 2019 Kiwisoft S.A.S., 978-1-492-03264-9.
-- StatQuest: https://statquest.org/
+- StatQuest: https://statquest.org/statquest-hierarchical-clustering/
+
