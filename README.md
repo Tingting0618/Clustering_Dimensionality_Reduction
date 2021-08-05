@@ -46,6 +46,8 @@ This process called Singular Value Decomposition
 
 - Linear Discriminant Analysis (LDA)
   - LDA projection will keep classes as far apart as possible, so LDA is a good technique to reduce dimensionality before running another classification algorithm.
+    - Max distance between means
+    - Min variance within known groups
 
 ## Topic 3: K-Means
 
